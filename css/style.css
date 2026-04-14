@@ -38,6 +38,11 @@ body {
   box-shadow: inset 0 0 20px rgba(0, 0, 0, 0.05);
   overflow: hidden;
   position: relative;
+  /* Fix for ghosting/residue during animation */
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  transform-style: preserve-3d;
+  will-change: transform;
 }
 
 /* Spine effect for left & right pages */
@@ -62,6 +67,8 @@ body {
   display: flex;
   flex-direction: column;
   position: relative;
+  /* Ensure content doesn't bleed or ghost */
+  background-color: inherit; 
 }
 
 /* Cover styling */
