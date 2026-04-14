@@ -28,12 +28,13 @@ body {
 .flip-book {
   width: 100%;
   height: 100%;
-  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
-  background-color: #fcfaf2; /* Ensure no gaps are transparent */
+  background-color: transparent;
+  box-shadow: none;
 }
 
 .page {
-  background-color: #fcfaf2; /* Soft creamy paper color */
+  background-color: #fcfaf2;
+  /* Soft creamy paper color */
   border-radius: 2px;
   /* Add paper texture by using subtle box-shadow inset and noise */
   box-shadow: inset 0 0 20px rgba(0, 0, 0, 0.05);
@@ -50,15 +51,15 @@ body {
 
 /* Spine effect for left & right pages */
 .page.--left {
-  border-right: 1px solid rgba(0,0,0,0.1);
-  box-shadow: inset -10px 0 20px rgba(0,0,0,0.05);
+  border-right: 1px solid rgba(0, 0, 0, 0.1);
+  box-shadow: inset -10px 0 20px rgba(0, 0, 0, 0.05);
   border-top-left-radius: 4px;
   border-bottom-left-radius: 4px;
 }
 
 .page.--right {
-  border-left: 1px solid rgba(0,0,0,0.1);
-  box-shadow: inset 10px 0 20px rgba(0,0,0,0.05);
+  border-left: 1px solid rgba(0, 0, 0, 0.1);
+  box-shadow: inset 10px 0 20px rgba(0, 0, 0, 0.05);
   border-top-right-radius: 4px;
   border-bottom-right-radius: 4px;
 }
@@ -71,7 +72,7 @@ body {
   flex-direction: column;
   position: relative;
   /* Ensure content doesn't bleed or ghost */
-  background-color: inherit; 
+  background-color: inherit;
 }
 
 /* Cover styling */
@@ -79,7 +80,7 @@ body {
   background: linear-gradient(145deg, #d4a373, #cca174);
   color: #fff;
   border: 1px solid #c29362;
-  box-shadow: inset 5px 0 20px rgba(0,0,0,0.2) !important;
+  box-shadow: inset 5px 0 20px rgba(0, 0, 0, 0.2) !important;
   border-radius: 5px 10px 10px 5px !important;
 }
 
@@ -92,7 +93,7 @@ body {
 .book-title {
   font-size: 2.8rem;
   margin-bottom: 30px;
-  text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
   text-align: center;
   color: #fff;
   letter-spacing: 2px;
@@ -103,7 +104,7 @@ body {
   height: auto;
   border-radius: 8px;
   overflow: hidden;
-  box-shadow: 0 10px 20px rgba(0,0,0,0.4);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
   border: 3px solid #fff;
 }
 
@@ -116,7 +117,8 @@ body {
 
 /* Inner pages layout */
 .image-page {
-  padding: 30px 20px 30px 40px; /* shift slightly away from spine */
+  padding: 30px 20px 30px 40px;
+  /* shift slightly away from spine */
   display: flex;
   justify-content: center;
   align-items: center;
@@ -127,7 +129,7 @@ body {
   height: 100%;
   object-fit: contain;
   border-radius: 8px;
-  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
   background-color: #fff;
   pointer-events: none;
   /* GPU acceleration and stability */
@@ -135,14 +137,17 @@ body {
 }
 
 .text-page {
-  padding: 8% 6% 8% 6%; /* Use flexible padding */
+  padding: 8% 6% 8% 6%;
+  /* Use flexible padding */
   justify-content: center;
   color: #3e3e3e;
-  overflow: hidden; /* No scrollbars on text page */
+  overflow: hidden;
+  /* No scrollbars on text page */
 }
 
 .text-page p {
-  font-size: clamp(0.8rem, 2.5vh, 1.6rem); /* text shrinks when height gets smaller */
+  font-size: clamp(0.8rem, 2.5vh, 1.6rem);
+  /* text shrinks when height gets smaller */
   line-height: 1.8;
   letter-spacing: 1px;
 }
@@ -179,7 +184,8 @@ body {
   color: #635043;
   letter-spacing: 5px;
   font-family: 'Noto Sans TC', serif;
-  transform: translateY(-10%); /* slightly above center looks elegant */
+  transform: translateY(-10%);
+  /* slightly above center looks elegant */
 }
 
 .end-page {
@@ -205,7 +211,7 @@ body {
   font-size: 1.2rem;
   cursor: pointer;
   transition: background-color 0.3s;
-  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 .replay-btn:hover {
@@ -224,6 +230,7 @@ body {
     font-size: clamp(0.9rem, 1.8vh, 1.3rem);
     line-height: 1.6;
   }
+
   .book-title {
     font-size: 2.2rem;
   }
@@ -233,7 +240,8 @@ body {
 @media (max-width: 600px) {
   .container {
     padding: 10px;
-    height: 90vh; /* Leave some space at bottom */
+    height: 90vh;
+    /* Leave some space at bottom */
     margin-top: 5vh;
   }
 
@@ -259,7 +267,7 @@ body {
     font-size: 1.4rem;
     letter-spacing: 3px;
   }
-  
+
   .end-page h2 {
     font-size: 2.2rem;
   }
