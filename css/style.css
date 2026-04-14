@@ -205,13 +205,49 @@ body {
   border-radius: 10px 5px 5px 10px !important;
 }
 
-/* Make it responsive */
+/* Responsive Adjustments */
 @media (max-width: 900px) {
   .text-page p {
-    font-size: clamp(0.8rem, 3vw, 1.2rem);
+    font-size: clamp(0.9rem, 1.8vh, 1.3rem);
     line-height: 1.6;
   }
   .book-title {
-    font-size: 2rem;
+    font-size: 2.2rem;
+  }
+}
+
+/* Mobile Portrait Mode (Single Page) */
+@media (max-width: 600px) {
+  .container {
+    padding: 10px;
+    height: 90vh; /* Leave some space at bottom */
+    margin-top: 5vh;
+  }
+
+  .text-page {
+    padding: 15% 10% 10% 10%;
+  }
+
+  .text-page p {
+    font-size: 1.1rem;
+    line-height: 1.7;
+  }
+
+  .image-page {
+    padding: 20px;
+  }
+
+  .book-title {
+    font-size: 1.8rem;
+    margin-bottom: 20px;
+  }
+
+  .dedication-content p {
+    font-size: 1.4rem;
+    letter-spacing: 3px;
+  }
+  
+  .end-page h2 {
+    font-size: 2.2rem;
   }
 }

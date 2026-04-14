@@ -5,34 +5,42 @@ document.addEventListener('DOMContentLoaded', function() {
         return;
     }
 
+    const bookElement = document.getElementById("book");
     const pageFlip = new St.PageFlip(
-        document.getElementById("book"),
+        bookElement,
         {
-            width: 480, // base width
-            height: 680, // base height
+            width: 480, // base page width
+            height: 680, // base page height
             size: "stretch", // automatically scales
-            // set threshold values to allow infinite auto scaling:
-            minWidth: 150,
+            minWidth: 200,
             maxWidth: 1000,
-            minHeight: 200,
+            minHeight: 300,
             maxHeight: 1500,
 
             maxShadowOpacity: 0.5,
             showCover: true,
-            mobileScrollSupport: false, // disable content scrolling on mobile devices
-            usePortrait: true // allow single-column portrait mode on small displays
+            mobileScrollSupport: false, 
+            usePortrait: true, // Switch to single page in portrait
+            startPage: 0
         }
     );
 
     // load pages
     pageFlip.loadFromHTML(document.querySelectorAll(".page"));
 
+    // Handle window resize for smoother mobile experience
+    window.addEventListener('resize', () => {
+        // StPageFlip usually handles resize automatically with "stretch",
+        // but explicitly calling a redraw can fix some boundary issues on mobile orientation change
+        pageFlip.update();
+    });
+
     // Add replay button listener
     const replayBtn = document.getElementById('btn-replay');
     if (replayBtn) {
         replayBtn.addEventListener('click', (e) => {
-            e.stopPropagation(); // prevent default page flip triggering
-            pageFlip.turnToPage(0); // Go back to the cover page
+            e.stopPropagation(); 
+            pageFlip.turnToPage(0);
         });
     }
 
