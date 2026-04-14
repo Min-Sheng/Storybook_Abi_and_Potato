@@ -9,19 +9,22 @@ document.addEventListener('DOMContentLoaded', function() {
     const pageFlip = new St.PageFlip(
         bookElement,
         {
-            width: 480, // base page width
-            height: 680, // base page height
-            size: "stretch", // automatically scales
+            width: 480, 
+            height: 680, 
+            size: "stretch", 
             minWidth: 200,
             maxWidth: 1000,
             minHeight: 300,
             maxHeight: 1500,
 
-            maxShadowOpacity: 0.5,
+            maxShadowOpacity: 0.2, // Lower opacity to fix ghosting
             showCover: true,
             mobileScrollSupport: false, 
-            usePortrait: true, // Switch to single page in portrait
-            startPage: 0
+            usePortrait: true,
+            startPage: 0,
+            drawShadow: true, // Keep it true but light, or set to false if it still lags
+            flippingTime: 800, // Slightly slower for smoother redraw
+            useMouseEvents: true
         }
     );
 
