@@ -17,14 +17,16 @@ document.addEventListener('DOMContentLoaded', function() {
             minHeight: 300,
             maxHeight: 1500,
 
-            maxShadowOpacity: 0.2, // Lower opacity to fix ghosting
+            maxShadowOpacity: 0, // Fully disable shadow opacity
             showCover: true,
             mobileScrollSupport: false, 
             usePortrait: true,
             startPage: 0,
-            drawShadow: true, // Keep it true but light, or set to false if it still lags
-            flippingTime: 800, // Slightly slower for smoother redraw
-            useMouseEvents: true
+            drawShadow: false, // Turn off shadow calculation entirely
+            flippingTime: 600, // Faster flip for less chance of frame drops
+            useMouseEvents: true,
+            swipeDistance: 30, // Sensitivity
+            showPageCorners: false // Disable corner folding effect to save GPU
         }
     );
 

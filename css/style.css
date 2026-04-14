@@ -129,7 +129,9 @@ body {
   border-radius: 8px;
   box-shadow: 0 5px 15px rgba(0,0,0,0.1);
   background-color: #fff;
-  pointer-events: none; /* Prevents ghosting during touch-drag */
+  pointer-events: none;
+  /* GPU acceleration and stability */
+  transform: translateZ(0);
 }
 
 .text-page {
