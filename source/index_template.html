@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>阿比與土豆 - 互動式繪本</title>
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Kosugi+Maru&family=Noto+Sans+TC:wght@400;700&display=swap" rel="stylesheet">
+  <!-- Styles -->
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <div class="container">
+    <div class="flip-book" id="book">
+      
+      <!-- Page 1: Cover -->
+      <div class="page cover-page" data-density="hard">
+        <div class="page-content">
+          <h1 class="book-title">阿比與土豆</h1>
+          <div class="image-wrapper">
+             <img src="assets/images/image_1.png" alt="Cover Image">
+          </div>
+        </div>
+      </div>
+      <!-- Page 2: Inner Cover Left (Blank) -->
+      <div class="page" data-density="hard">
+        <div class="page-content blank-page"></div>
+      </div>
+
+      <!-- Page 3: Dedication Page -->
+      <div class="page">
+        <div class="page-content dedication-content">
+          <p>獻給親愛的盈均</p>
+        </div>
+      </div>
+
+
+      <!-- INJECT_PAGES_HERE -->
+
+      <!-- Inner Back Cover -->
+      <div class="page" data-density="hard">
+        <div class="page-content blank-page end-page">
+             <h2>The End</h2>
+             <p>謝謝閱讀</p>
+             <button id="btn-replay" class="replay-btn">再看一次</button>
+        </div>
+      </div>
+
+      <!-- Back Cover -->
+      <div class="page back-cover-page" data-density="hard">
+        <div class="page-content">
+          <div class="spine"></div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- StPageFlip core script via CDN -->
+  <script src="https://cdn.jsdelivr.net/npm/page-flip/dist/js/page-flip.browser.js"></script>
+  <!-- Custom initialization logic -->
+  <script src="js/main.js"></script>
+</body>
+</html>
